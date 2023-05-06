@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "450710726556",
+    "firebase_url": "https://amhr-2727.firebaseio.com",
+    "project_id": "amhr-2727",
+    "storage_bucket": "amhr-2727.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450710726556:android:ce4fff4519830fc3038a59",
+        "android_client_info": {
+          "package_name": "com.example.everymovethecodemonsterpartapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450710726556-9tdo9afmqjg09upvp49jm9f77kmbprag.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADyNSWclyG9MgSdG91RQo3lRW4kRO42pc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450710726556-9tdo9afmqjg09upvp49jm9f77kmbprag.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
