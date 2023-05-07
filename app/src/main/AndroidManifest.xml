@@ -16,8 +16,12 @@
         android:theme="@style/Theme.EveryMoveTheCodeMonsterPartApp"
         tools:targetApi="31">
         <activity
-            android:name=".DailyDataInput"
+            android:name=".TodayTestAct"
             android:exported="false" />
+        <activity
+            android:name=".DailyDataInput"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".logInActivity"
             android:exported="false"
