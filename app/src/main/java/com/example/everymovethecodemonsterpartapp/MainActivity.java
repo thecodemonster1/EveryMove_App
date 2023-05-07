@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), logInActivity.class);
-                Toast.makeText(MainActivity.this, "Welcome to logInActivity", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Welcome to Register Activity", Toast.LENGTH_SHORT).show();
                 startActivity(i);
             }
         });
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), RegActivity.class);
-                Toast.makeText(MainActivity.this, "Welcome to RegActivity", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Welcome to LogIn Activity", Toast.LENGTH_SHORT).show();
                 startActivity(i);
             }
         });
