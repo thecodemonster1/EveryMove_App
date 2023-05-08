@@ -7,9 +7,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.DatePicker;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.Calendar;
+
 public class DailyDataInput extends AppCompatActivity {
 
-    private DatePickerDialog datePickerDialog;
+    public static DatePickerDialog datePickerDialog;
+    private int year_x, month_x, day_x;
+    private DatePickerDialog.OnDateSetListener dpickerListner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,28 +26,30 @@ public class DailyDataInput extends AppCompatActivity {
         getSupportActionBar().setTitle("Every Move");
 
 
-        datePickerDialog = (DatePickerDialog) findViewById(R.id.dailyDatePicker);
+//        datePickerDialog = findViewById(R.id.dailyDatePicker);
+        final Calendar cal = Calendar.getInstance();
+        year_x = cal.get(Calendar.YEAR);
+        month_x = cal.get(Calendar.MONTH);
+        day_x = cal.get(Calendar.DAY_OF_MONTH);
     }
 
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
 
-        datePickerDialog.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
+        dpickerListner
+                = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                // Create an Intent to start the new activity
-                Intent intent = new Intent(getApplicationContext(), NewActivity.class);
+                year_x = year;
+                month_x = monthOfYear + 1;
+                day_x = dayOfMonth;
 
-                // Pass the selected date to the new activity as an extra
-                String selectedDate = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
-                intent.putExtra("selected_date", selectedDate);
-
-                // Start the new activity
-                startActivity(intent);
+                Intent o = new Intent(DailyDataInput.this, TodayTestAct.class);
+                o.putExtra("Date", year_x + "/" + month_x + "/" + day_x + "/");
+                startActivity(o);
             }
-        });
-
+        };
     }
 }
