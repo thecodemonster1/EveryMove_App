@@ -27,12 +27,14 @@
 
         <Button
             android:id="@+id/buttonInput"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="146dp"
+            android:layout_height="54dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="224dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="121dp"
+            android:layout_marginTop="239dp"
+            android:layout_marginEnd="100dp"
             android:text="Input Data" />
 
         <TextView
@@ -41,8 +43,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="192dp"
             android:layout_marginTop="393dp"
+            android:layout_marginEnd="175dp"
             android:text="" />
 
     </RelativeLayout>

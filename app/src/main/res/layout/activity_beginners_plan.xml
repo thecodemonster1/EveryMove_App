@@ -25,20 +25,19 @@
 
                 <EditText
                     android:id="@+id/pushupCount"
-                    android:layout_width="320dp"
+                    android:layout_width="206dp"
                     android:layout_height="51dp"
                     android:layout_below="@+id/textview1"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="42dp"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="60dp"
                     android:layout_marginTop="41dp"
-                    android:layout_marginEnd="49dp"
+                    android:layout_marginEnd="163dp"
                     android:background="@drawable/button_boarder"
                     android:drawableLeft="@mipmap/pushup1_foreground"
                     android:drawablePadding="8dp"
                     android:fontFamily="@font/source"
-                    android:hint="Push-Ups (10 Reps)"
                     android:inputType="number|numberDecimal"
                     android:padding="8dp"
                     android:textColor="@color/black" />
@@ -189,6 +188,26 @@
                     android:layout_marginTop="896dp"
                     android:text="Add"
                     app:cornerRadius="40dp" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="54dp"
+                    android:layout_marginTop="116dp"
+                    android:text="Push-Ups (10 Reps)" />
+
+                <CheckBox
+                    android:id="@+id/checkBox1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="264dp"
+                    android:layout_marginTop="146dp"
+                    android:text="Completed" />
         </RelativeLayout>
 
 </ScrollView>

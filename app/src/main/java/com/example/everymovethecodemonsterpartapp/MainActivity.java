@@ -42,38 +42,29 @@ public class MainActivity extends AppCompatActivity {
         inputBtn = (Button) findViewById(R.id.buttonInput);
         message = (TextView) findViewById(R.id.textMessage);
 
-        uParent = "workouts";
 
-        // Perform the search query
-        databaseReference.orderByChild(uParent).equalTo("BeginnersPlan").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // Data is retrieved successfully
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    // Process each retrieved data item
-                    String data = snapshot.getValue(String.class);
-                    // Perform actions with the retrieved data
-                    // ...
-                    workoutPlan = data;
-
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Error occurred while retrieving data
-                // Handle the error
-                Toast.makeText(MainActivity.this, "Error in Database", Toast.LENGTH_LONG).show();
-            }
-        });
-//
-//        inputBtn.setOnClickListener(new View.OnClickListener() {
+//        // Perform the search query
+//        databaseReference.orderByChild(uParent).equalTo("BeginnersPlan").addListenerForSingleValueEvent(new ValueEventListener() {
 //            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(MainActivity.this, "Plan is "+workoutPlan, Toast.LENGTH_LONG).show();
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                // Data is retrieved successfully
+//                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+//                    // Process each retrieved data item
+//                    String data = snapshot.getValue(String.class);
+//                    // Perform actions with the retrieved data
+//                    // ...
+//
+//
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                // Error occurred while retrieving data
+//                // Handle the error
+//                Toast.makeText(MainActivity.this, "Error in Database", Toast.LENGTH_LONG).show();
 //            }
 //        });
-
 
 
         inputBtn.setOnClickListener(new View.OnClickListener() {
@@ -96,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     String key = snapshot.getKey();
                     String value = snapshot.getValue(String.class);
 
-
+                    Toast.makeText(MainActivity.this, key +" : "+ value, Toast.LENGTH_LONG).show();
                     if (key.equals("planName")) {
                         // Use the value associated with the key
                         message.setText("Your Workout Plan is : " + value);
@@ -118,27 +109,4 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-//    @Override
-//    public void onResume(){
-//        super.onResume();
-//
-//        btnLogin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(getApplicationContext(), logInActivity.class);
-//                Toast.makeText(MainActivity.this, "Welcome to Register Activity", Toast.LENGTH_SHORT).show();
-//                startActivity(i);
-//            }
-//        });
-//
-//        btnReg.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(getApplicationContext(), RegActivity.class);
-//                Toast.makeText(MainActivity.this, "Welcome to LogIn Activity", Toast.LENGTH_SHORT).show();
-//                startActivity(i);
-//            }
-//        });
-//    }
 }
