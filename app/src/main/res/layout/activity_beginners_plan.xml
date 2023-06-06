@@ -1,172 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#77BDA54E"
     tools:context=".RegActivity">
 
-
-
-
-        <TextView
-            android:id="@+id/textview1"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="51dp"
-            android:fontFamily="@font/lobster"
-            android:text="Daily Data"
-            android:textAlignment="center"
-            android:textColor="#009B85"
-            android:textSize="36dp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/signup_name"
-            android:layout_width="320dp"
-            android:layout_height="51dp"
-            android:layout_below="@+id/textview1"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="42dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="41dp"
-            android:layout_marginEnd="49dp"
-            android:background="@drawable/button_boarder"
-            android:drawableLeft="@mipmap/pushup1_foreground"
-            android:drawablePadding="8dp"
-            android:fontFamily="@font/source"
-            android:hint="Push-Ups (20 Reps)"
-            android:inputType="number|numberDecimal"
-            android:padding="8dp"
-            android:textColor="@color/black" />
+                <TextView
+                    android:id="@+id/textview1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="51dp"
+                    android:fontFamily="@font/lobster"
+                    android:text="Daily Data"
+                    android:textAlignment="center"
+                    android:textColor="#009B85"
+                    android:textSize="36dp"
+                    android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/signup_email"
-            android:layout_width="320dp"
-            android:layout_height="51dp"
-            android:layout_below="@+id/signup_name"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="47dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="44dp"
-            android:background="@drawable/button_boarder"
-            android:drawableLeft="@mipmap/side_plank_foreground"
-            android:drawablePadding="8dp"
-            android:fontFamily="@font/source"
-            android:hint="Side-Plank (60 Sec)"
-            android:inputType="number|numberDecimal"
-            android:padding="8dp"
-            android:textColor="@color/black" />
+                <EditText
+                    android:id="@+id/pushupCount"
+                    android:layout_width="320dp"
+                    android:layout_height="51dp"
+                    android:layout_below="@+id/textview1"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="41dp"
+                    android:layout_marginEnd="49dp"
+                    android:background="@drawable/button_boarder"
+                    android:drawableLeft="@mipmap/pushup1_foreground"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/source"
+                    android:hint="Push-Ups (10 Reps)"
+                    android:inputType="number|numberDecimal"
+                    android:padding="8dp"
+                    android:textColor="@color/black" />
 
-        <EditText
-            android:id="@+id/signup_password"
-            android:layout_width="320dp"
-            android:layout_height="51dp"
-            android:layout_below="@+id/signup_email"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="47dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="44dp"
-            android:background="@drawable/button_boarder"
-            android:drawableLeft="@mipmap/crunches_foreground"
-            android:drawablePadding="8dp"
-            android:fontFamily="@font/source"
-            android:hint="Crunches (10 Reps)"
-            android:inputType="number|numberDecimal"
-            android:padding="8dp"
-            android:textColor="@color/black" />
+                <EditText
+                    android:id="@+id/sideplankCount"
+                    android:layout_width="320dp"
+                    android:layout_height="51dp"
+                    android:layout_below="@+id/pushupCount"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="47dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="44dp"
+                    android:background="@drawable/button_boarder"
+                    android:drawableLeft="@mipmap/side_plank_foreground"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/source"
+                    android:hint="Side-Plank (30 Sec)"
+                    android:inputType="number|numberDecimal"
+                    android:padding="8dp"
+                    android:textColor="@color/black" />
 
-        <EditText
-            android:id="@+id/signup_dob"
-            android:layout_width="320dp"
-            android:layout_height="51dp"
-            android:layout_below="@+id/signup_password"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="47dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="44dp"
-            android:background="@drawable/button_boarder"
-            android:drawableLeft="@mipmap/supermans_foreground"
-            android:drawablePadding="0dp"
-            android:fontFamily="@font/source"
-            android:hint="Supermans (5 Reps)"
-            android:inputType="number|numberDecimal"
-            android:padding="8dp"
-            android:scaleType="fitStart"
-            android:textColor="@color/black" />
+                <EditText
+                    android:id="@+id/crunchesCount"
+                    android:layout_width="320dp"
+                    android:layout_height="51dp"
+                    android:layout_below="@+id/sideplankCount"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="47dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="44dp"
+                    android:background="@drawable/button_boarder"
+                    android:drawableLeft="@mipmap/crunches_foreground"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/source"
+                    android:hint="Crunches (5 Reps)"
+                    android:inputType="number|numberDecimal"
+                    android:padding="8dp"
+                    android:textColor="@color/black" />
 
-        <EditText
-            android:id="@+id/signup_height"
-            android:layout_width="320dp"
-            android:layout_height="51dp"
-            android:layout_below="@+id/signup_dob"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="47dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="44dp"
-            android:background="@drawable/button_boarder"
-            android:drawableLeft="@mipmap/jumping_jack_foreground"
-            android:drawablePadding="8dp"
-            android:fontFamily="@font/source"
-            android:hint="Jumping jack (10 Reps)"
-            android:inputType="numberDecimal"
-            android:padding="8dp"
-            android:textColor="@color/black" />
+                <EditText
+                    android:id="@+id/supermansCount"
+                    android:layout_width="320dp"
+                    android:layout_height="51dp"
+                    android:layout_below="@+id/crunchesCount"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="47dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="44dp"
+                    android:background="@drawable/button_boarder"
+                    android:drawableLeft="@mipmap/supermans_foreground"
+                    android:drawablePadding="0dp"
+                    android:fontFamily="@font/source"
+                    android:hint="Supermans (5 Reps)"
+                    android:inputType="number|numberDecimal"
+                    android:padding="8dp"
+                    android:scaleType="fitStart"
+                    android:textColor="@color/black" />
 
-        <!--        <Button-->
-    <!--            android:text="Sign Up"-->
-    <!--            android:fontFamily="@font/roboto"-->
-    <!--            android:id="@+id/signup_button"-->
-    <!--            android:layout_width="130dp"-->
-    <!--            android:layout_height="51dp"-->
-    <!--            android:layout_below="@+id/signup_weight"-->
-    <!--            android:layout_marginStart="120dp"-->
-    <!--            android:layout_marginLeft="30dp"-->
-    <!--            android:layout_marginTop="13dp"-->
-    <!--            android:textSize="15dp"-->
-    <!--            app:cornerRadius="40dp"/>-->
+                <EditText
+                    android:id="@+id/jumpingjackCount"
+                    android:layout_width="320dp"
+                    android:layout_height="51dp"
+                    android:layout_below="@+id/supermansCount"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="47dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="44dp"
+                    android:background="@drawable/button_boarder"
+                    android:drawableLeft="@mipmap/jumping_jack_foreground"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/source"
+                    android:hint="Jumping jack (10 Reps)"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:textColor="@color/black" />
 
-        <EditText
-            android:id="@+id/signup_weight"
-            android:layout_width="320dp"
-            android:layout_height="51dp"
-            android:layout_below="@+id/signup_height"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="47dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="44dp"
-            android:background="@drawable/button_boarder"
-            android:drawableLeft="@mipmap/running_foreground"
-            android:drawablePadding="8dp"
-            android:fontFamily="@font/source"
-            android:hint="Run Distance (500 m)"
-            android:inputType="numberDecimal"
-            android:padding="8dp"
-            android:textColor="@color/black" />
+                <!--        <Button-->
+                <!--            android:text="Sign Up"-->
+                <!--            android:fontFamily="@font/roboto"-->
+                <!--            android:id="@+id/signup_button"-->
+                <!--            android:layout_width="130dp"-->
+                <!--            android:layout_height="51dp"-->
+                <!--            android:layout_below="@+id/signup_weight"-->
+                <!--            android:layout_marginStart="120dp"-->
+                <!--            android:layout_marginLeft="30dp"-->
+                <!--            android:layout_marginTop="13dp"-->
+                <!--            android:textSize="15dp"-->
+                <!--            app:cornerRadius="40dp"/>-->
 
-        <Button
-            android:id="@+id/buttonAdd_plan_A"
-            android:layout_width="130dp"
-            android:layout_height="51dp"
-            android:layout_below="@+id/signup_weight"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="139dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="110dp"
-            android:text="Add"
-            app:cornerRadius="40dp" />
+                <EditText
+                    android:id="@+id/runCount"
+                    android:layout_width="320dp"
+                    android:layout_height="51dp"
+                    android:layout_below="@+id/jumpingjackCount"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="47dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="44dp"
+                    android:background="@drawable/button_boarder"
+                    android:drawableLeft="@mipmap/running_foreground"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/source"
+                    android:hint="Run Distance (500 m)"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:textColor="@color/black" />
 
+                <EditText
+                    android:id="@+id/runCount2"
+                    android:layout_width="320dp"
+                    android:layout_height="51dp"
+                    android:layout_below="@+id/runCount"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="47dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="44dp"
+                    android:background="@drawable/button_boarder"
+                    android:drawableLeft="@mipmap/cross_crunches_foreground"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/source"
+                    android:hint="Cross-Body-Crunches(2 Reps)"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black" />
 
-</RelativeLayout>
+                <Button
+                    android:id="@+id/buttonAdd_plan_A"
+                    android:layout_width="130dp"
+                    android:layout_height="51dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="139dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="896dp"
+                    android:text="Add"
+                    app:cornerRadius="40dp" />
+        </RelativeLayout>
+
+</ScrollView>

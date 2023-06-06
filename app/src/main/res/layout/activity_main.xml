@@ -3,64 +3,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#77BDA54E"
     tools:context=".MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="1000dp"
         android:layout_margin="15dp"
         android:padding="15dp">
 
-        <ImageView
-            android:id="@+id/imageView_logo"
-            android:layout_width="183dp"
-            android:layout_height="145dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="80dp"
-            android:layout_marginEnd="90dp"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/app_name"
-            android:maxWidth="180dp"
-            app:srcCompat="@drawable/baseline_person_pin_24"
-            />
-
         <TextView
-            android:id="@+id/textView_main_head"
+            android:id="@+id/textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="51dp"
+            android:fontFamily="@font/lobster"
+            android:text="Daily Input Data"
+            android:textAlignment="center"
+            android:textColor="#009B85"
+            android:textSize="36dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="-4dp"
-            android:layout_marginTop="10dp"
-            android:contentDescription="this is for title of the log"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="Welcome to EveryMove profile management"
-            android:textAlignment="center"
-            android:textColor="#449986"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:typeface="sans" />
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="224dp"
+            android:text="Input Data" />
 
-        <Button
-            android:id="@+id/button_login"
-            android:layout_width="117dp"
+        <TextView
+            android:id="@+id/textMessage"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView_logo"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="125dp"
-            android:layout_marginTop="139dp"
-            android:text="Login" />
-
-        <Button
-            android:id="@+id/button_register"
-            android:layout_width="119dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/imageView_logo"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="125dp"
-            android:layout_marginTop="203dp"
-            android:text="Signup" />
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="192dp"
+            android:layout_marginTop="393dp"
+            android:text="" />
 
     </RelativeLayout>
 

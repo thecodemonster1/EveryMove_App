@@ -16,13 +16,16 @@
         android:theme="@style/Theme.EveryMoveTheCodeMonsterPartApp"
         tools:targetApi="31">
         <activity
+            android:name=".beginners_plan_activity"
+            android:exported="false" />
+        <activity
             android:name=".AddData"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".TodayTestAct"
             android:exported="false"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DailyDataInput"
             android:exported="false"
