@@ -159,7 +159,7 @@
             android:textSize="16sp" />
 
         <Button
-            android:id="@+id/signup_button"
+            android:id="@+id/buttonAdd_plan_A"
             android:layout_width="130dp"
             android:layout_height="51dp"
             android:layout_below="@+id/signup_weight"

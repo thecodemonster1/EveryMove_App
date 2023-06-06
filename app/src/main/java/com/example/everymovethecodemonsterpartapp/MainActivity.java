@@ -15,38 +15,38 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_beginners_plan);
 
         //set title of the app
         getSupportActionBar().setTitle("Every Move");
 
 
         //set the variables of buttons
-        btnLogin = findViewById(R.id.button_login);
-        btnReg = findViewById(R.id.button_register);
+//        btnLogin = findViewById(R.id.button_login);
+//        btnReg = findViewById(R.id.button_register);
 
     }
 
-    @Override
-    public void onResume(){
-        super.onResume();
-
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), logInActivity.class);
-                Toast.makeText(MainActivity.this, "Welcome to Register Activity", Toast.LENGTH_SHORT).show();
-                startActivity(i);
-            }
-        });
-
-        btnReg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), RegActivity.class);
-                Toast.makeText(MainActivity.this, "Welcome to LogIn Activity", Toast.LENGTH_SHORT).show();
-                startActivity(i);
-            }
-        });
-    }
+//    @Override
+//    public void onResume(){
+//        super.onResume();
+//
+//        btnLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(getApplicationContext(), logInActivity.class);
+//                Toast.makeText(MainActivity.this, "Welcome to Register Activity", Toast.LENGTH_SHORT).show();
+//                startActivity(i);
+//            }
+//        });
+//
+//        btnReg.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(getApplicationContext(), RegActivity.class);
+//                Toast.makeText(MainActivity.this, "Welcome to LogIn Activity", Toast.LENGTH_SHORT).show();
+//                startActivity(i);
+//            }
+//        });
+//    }
 }

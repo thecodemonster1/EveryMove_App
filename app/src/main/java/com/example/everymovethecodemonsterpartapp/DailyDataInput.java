@@ -46,7 +46,7 @@ public class DailyDataInput extends AppCompatActivity {
                 month_x = monthOfYear + 1;
                 day_x = dayOfMonth;
 
-                Intent o = new Intent(DailyDataInput.this, TodayTestAct.class);
+                Intent o = new Intent(getApplicationContext(), TodayTestAct.class);
                 o.putExtra("Date", year_x + "/" + month_x + "/" + day_x + "/");
                 startActivity(o);
             }
