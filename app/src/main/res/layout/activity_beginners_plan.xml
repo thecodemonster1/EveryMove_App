@@ -24,7 +24,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/pushupCount"
+                    android:id="@+id/Count1"
                     android:layout_width="206dp"
                     android:layout_height="51dp"
                     android:layout_below="@+id/textview1"
@@ -43,10 +43,10 @@
                     android:textColor="@color/black" />
 
                 <EditText
-                    android:id="@+id/sideplankCount"
+                    android:id="@+id/Count2"
                     android:layout_width="320dp"
                     android:layout_height="51dp"
-                    android:layout_below="@+id/pushupCount"
+                    android:layout_below="@+id/Count1"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="47dp"
@@ -63,10 +63,10 @@
                     android:textColor="@color/black" />
 
                 <EditText
-                    android:id="@+id/crunchesCount"
+                    android:id="@+id/Count3"
                     android:layout_width="320dp"
                     android:layout_height="51dp"
-                    android:layout_below="@+id/sideplankCount"
+                    android:layout_below="@+id/Count2"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="47dp"
@@ -83,10 +83,10 @@
                     android:textColor="@color/black" />
 
                 <EditText
-                    android:id="@+id/supermansCount"
+                    android:id="@+id/Count4"
                     android:layout_width="320dp"
                     android:layout_height="51dp"
-                    android:layout_below="@+id/crunchesCount"
+                    android:layout_below="@+id/Count3"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="47dp"
@@ -104,10 +104,10 @@
                     android:textColor="@color/black" />
 
                 <EditText
-                    android:id="@+id/jumpingjackCount"
+                    android:id="@+id/Count5"
                     android:layout_width="320dp"
                     android:layout_height="51dp"
-                    android:layout_below="@+id/supermansCount"
+                    android:layout_below="@+id/Count4"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="47dp"
@@ -137,10 +137,10 @@
                 <!--            app:cornerRadius="40dp"/>-->
 
                 <EditText
-                    android:id="@+id/runCount"
+                    android:id="@+id/Count6"
                     android:layout_width="320dp"
                     android:layout_height="51dp"
-                    android:layout_below="@+id/jumpingjackCount"
+                    android:layout_below="@+id/Count5"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="47dp"
@@ -157,10 +157,10 @@
                     android:textColor="@color/black" />
 
                 <EditText
-                    android:id="@+id/runCount2"
+                    android:id="@+id/Count7"
                     android:layout_width="320dp"
                     android:layout_height="51dp"
-                    android:layout_below="@+id/runCount"
+                    android:layout_below="@+id/Count6"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="47dp"
