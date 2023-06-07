@@ -4,14 +4,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 
-public class beginners_plan_activity extends AppCompatActivity {
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class balanced_plan_activity extends AppCompatActivity {
 
     EditText Count1, Count2, Count3, Count4, Count5, Count6, Count7;
     CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7;
@@ -22,9 +33,11 @@ public class beginners_plan_activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_beginners_plan2);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(beginners_plan_activity.this);
+
+        setContentView(R.layout.activity_balanced_plan);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(balanced_plan_activity.this);
 
 
         // 1 =============================================================
@@ -111,13 +124,6 @@ public class beginners_plan_activity extends AppCompatActivity {
             public void onClick(View v) {
 
 //                int total = ((int) (((((Integer.parseInt(Count1.getText().toString())/10.0)*100.0)+((Integer.parseInt(Count2.getText().toString())/30.0)*100.0)+((Integer.parseInt(Count3.getText().toString())/5.0)*100.0)+((Integer.parseInt(Count4.getText().toString())/5.0)*100.0)+((Integer.parseInt(Count5.getText().toString())/10.0)*100.0)+((Integer.parseInt(Count6.getText().toString())/500.0)*100.0)+((Integer.parseInt(Count7.getText().toString())/2.0)*100.0))/7)*0.05));
-                int CountInt1 = Integer.parseInt(Count1.getText().toString());
-                int CountInt2 = Integer.parseInt(Count2.getText().toString());
-                int CountInt3 = Integer.parseInt(Count3.getText().toString());
-                int CountInt4 = Integer.parseInt(Count4.getText().toString());
-                int CountInt5 = Integer.parseInt(Count5.getText().toString());
-                int CountInt6 = Integer.parseInt(Count6.getText().toString());
-                int CountInt7 = Integer.parseInt(Count7.getText().toString());
 
                 double score1 = (Integer.parseInt(Count1.getText().toString())/10.0)*100.0;
                 double score2 = (Integer.parseInt(Count2.getText().toString())/30.0)*100.0;
@@ -129,10 +135,8 @@ public class beginners_plan_activity extends AppCompatActivity {
 
                 int totalScore = (int) (((score1 + score2 + score3 + score4 + score5 + score6 + score7) / 7)*0.05);
 
-                String scoreStr = Double.toString(totalScore);
-
                 builder.setTitle("Scores");
-                builder.setMessage("Your Total Score is "+ scoreStr);
+                builder.setMessage("Your Total Score is "+ totalScore);
 
                 // Set a positive button and its click listener
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -140,11 +144,66 @@ public class beginners_plan_activity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         // Perform the desired action when the OK button is clicked
                         // This can be left empty if you just want to dismiss the dialog
+                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(i);
                     }
                 });
                 builder.show();
+
+
+
+                // Aarooopans code...!
+                String Username = "aaroophan";
+
+                Date date = new Date();
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                String Date = formatter.format(date);;
+                String[] DateParts = Date.split("-");
+                int DateDay = Integer.parseInt(DateParts[2]);
+                int DateMonth = Integer.parseInt(DateParts[1]);
+                int DateYear = Integer.parseInt(DateParts[0]);
+
+                String CurrentDate = DateYear+"-"+DateMonth+"-"+DateDay;
+
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef3 = database.getReference("/HealthScore/" + Username);
+                myRef3.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot snapshot) {
+                        if(!snapshot.exists()){
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference myRef = database.getReference("/HealthScore");
+                            myRef.child(Username).setValue("");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError error) {
+                        Log.w("AAAAAAAAAAAAAA", "Failed to read value.", error.toException());
+                    }
+                });
+
+
+                DatabaseReference myRef2 = database.getReference("/HealthScore/" + Username);
+
+                myRef2.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            myRef2.child(CurrentDate).setValue(totalScore);
+                            Log.d("AAAAAAAAAAAAAA", "INSERT VALUE");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError error) {
+                        Log.w("AAAAAAAAAAAAAA", "Failed to read value.", error.toException());
+                    }
+                });
             }
         });
+
+
 
     }
 
@@ -152,7 +211,7 @@ public class beginners_plan_activity extends AppCompatActivity {
 // check minus value function =============================================================
     public void checkInvalidValue(int pCountInt, EditText Count){
         if (pCountInt < 0){
-            AlertDialog.Builder builder = new AlertDialog.Builder(beginners_plan_activity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(balanced_plan_activity.this);
             builder.setTitle("Error");
             builder.setMessage("Invalid workout count!!!");
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {

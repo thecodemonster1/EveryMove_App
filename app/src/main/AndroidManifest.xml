@@ -16,7 +16,7 @@
         android:theme="@style/Theme.EveryMoveTheCodeMonsterPartApp"
         tools:targetApi="31">
         <activity
-            android:name=".beginners_plan_activity"
+            android:name=".balanced_plan_activity"
             android:exported="false" />
         <activity
             android:name=".AddData"

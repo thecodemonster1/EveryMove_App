@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private String uParent;
     private String uChild;
     private String searchPlan;
+    private Boolean test;
 
 
     @Override
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference("Personal Plans").child("testID3");
+        DatabaseReference databaseReference = firebaseDatabase.getReference("Personal Plans").child("testID");
 
 
         //set title of the app
@@ -42,43 +43,10 @@ public class MainActivity extends AppCompatActivity {
         message = (TextView) findViewById(R.id.textMessage);
 
 
-//        // Perform the search query
-        databaseReference.orderByChild(uParent).equalTo(searchPlan).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // Data is retrieved successfully
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    // Process each retrieved data item
-                    String data = snapshot.getValue(String.class);
-                    // Perform actions with the retrieved data
-                    // ...
-                    Toast.makeText(MainActivity.this, data, Toast.LENGTH_LONG).show();
-                    Intent iBig = new Intent(getApplicationContext(), beginners_plan_activity.class);
-                    startActivity(iBig);
-
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Error occurred while retrieving data
-                // Handle the error
-                Toast.makeText(MainActivity.this, "Error in Database", Toast.LENGTH_LONG).show();
-            }
-        });
-
-
-//        inputBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent iBig = new Intent(getApplicationContext(), beginners_plan_activity.class);
-//                startActivity(iBig);
-//            }
-//        });
 
 
 
-        // Attach a ValueEventListener to retrieve data
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -96,13 +64,9 @@ public class MainActivity extends AppCompatActivity {
                     if (key.equals("planName")) {
                         // Use the value associated with the key
                         message.setText("Your Workout Plan is : " + value);
-                        searchPlan = value;
                         Toast.makeText(MainActivity.this, key +" : "+ value, Toast.LENGTH_LONG).show();
                         break; // Exit the loop if the key is found
                     }
-
-
-
                     Log.d("FirebaseData", "Value: " + value);
                 }
             }
@@ -114,6 +78,78 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("FirebaseData", "Failed to retrieve data: " + error.getMessage());
             }
         });
+
+//        // Perform the search query
+//        databaseReference.orderByChild("Beginners Plan").equalTo("Beginners Plan").addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                // Data is retrieved successfully
+//                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+//                    // Process each retrieved data item
+//                    String data = snapshot.getValue(String.class);
+//                    // Perform actions with the retrieved data
+//                    // ...
+//                    Toast.makeText(MainActivity.this, data, Toast.LENGTH_LONG).show();
+//
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                // Error occurred while retrieving data
+//                // Handle the error
+//                Toast.makeText(MainActivity.this, "Error in Database", Toast.LENGTH_LONG).show();
+//            }
+//        });
+        test = true;
+        inputBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (test){
+                    Intent i = new Intent(getApplicationContext(), balanced_plan_activity.class);
+                    startActivity(i);
+                }
+            }
+        });
+
+
+
+        // Attach a ValueEventListener to retrieve data
+//        databaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                // This method is called when the data is changed or fetched for the first time
+//                // Retrieve the data from the snapshot
+//
+//                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+//                    // Access individual child nodes
+//                    String key = snapshot.getKey();
+//                    String value = snapshot.getValue(String.class);
+//
+//                    // Do something with the data
+//
+//                    Toast.makeText(MainActivity.this, key +" : "+ value, Toast.LENGTH_LONG).show();
+//                    if (key.equals("planName")) {
+//                        // Use the value associated with the key
+//                        message.setText("Your Workout Plan is : " + value);
+//                        searchPlan = value;
+//                        Toast.makeText(MainActivity.this, key +" : "+ value, Toast.LENGTH_LONG).show();
+//                        break; // Exit the loop if the key is found
+//                    }
+//
+//
+//
+//                    Log.d("FirebaseData", "Value: " + value);
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError error) {
+//                // This method is called if the retrieval is canceled or fails
+//                Toast.makeText(MainActivity.this, "Failed to retrieve data: " + error.getMessage(), Toast.LENGTH_LONG).show();
+//                Log.e("FirebaseData", "Failed to retrieve data: " + error.getMessage());
+//            }
+//        });
 
     }
 }
