@@ -16,6 +16,12 @@
         android:theme="@style/Theme.EveryMoveTheCodeMonsterPartApp"
         tools:targetApi="31">
         <activity
+            android:name=".core_workout_plan_activity"
+            android:exported="false" />
+        <activity
+            android:name=".strength_plan_activity"
+            android:exported="false" />
+        <activity
             android:name=".aerobics_plan_activity"
             android:exported="false" />
         <activity
