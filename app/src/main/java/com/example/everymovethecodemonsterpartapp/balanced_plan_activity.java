@@ -33,8 +33,6 @@ public class balanced_plan_activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         setContentView(R.layout.activity_balanced_plan);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(balanced_plan_activity.this);

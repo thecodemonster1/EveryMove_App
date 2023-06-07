@@ -38,12 +38,5 @@ public class RegActivity extends AppCompatActivity {
             }
         });
 
-        logInPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), logInActivity.class);
-                startActivity(i);
-            }
-        });
     }
 }
