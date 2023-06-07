@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="#77BDA54E"
     tools:context=".MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="1000dp"
+        android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:padding="15dp">
 
@@ -44,10 +44,11 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="192dp"
-            android:layout_marginTop="393dp"
-            android:layout_marginEnd="175dp"
-            android:text="" />
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="403dp"
+            android:layout_marginEnd="120dp"
+            android:text="Text" />
+
 
     </RelativeLayout>
 
