@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 //        loadingDialog.dismiss();
 
 
-        loadDialog();
+        loadDialog(10);
         databaseReference.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
         return dialog;
     }
 
-    private void loadDialog(){
+    private void loadDialog(int delay){
         // Loading dialog view
         loadingDialog = createLoadingDialog();
         loadingDialog.show();
@@ -187,6 +187,6 @@ public class MainActivity extends AppCompatActivity {
                 // For example, display a Toast message -> Loading Complete
 //                Toast.makeText(MainActivity.this, "Database is connected", Toast.LENGTH_SHORT).show();
             }
-        }, 10000); // Simulating a 2-second delay
+        }, delay*1000); // Simulating a 2-second delay
     }
 }

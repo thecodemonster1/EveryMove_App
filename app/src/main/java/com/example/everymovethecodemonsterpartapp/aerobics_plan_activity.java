@@ -125,8 +125,10 @@ public class aerobics_plan_activity extends AppCompatActivity {
                         }
                     });
                     builder.show();
-                }else if (totalScore < 5){
-
+                }else{
+                    if (totalScore > 5){
+                        totalScore = 5;
+                    }
                     builder.setTitle("Scores");
                     builder.setMessage("Your Total Score is "+ totalScore);
 
