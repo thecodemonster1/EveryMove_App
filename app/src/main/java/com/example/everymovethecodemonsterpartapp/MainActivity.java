@@ -28,10 +28,12 @@ public class MainActivity extends AppCompatActivity {
     public Dialog loadingDialog;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
+
         setContentView(R.layout.activity_main);
 
 
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         inputBtn = (Button) findViewById(R.id.buttonInput);
         message = (TextView) findViewById(R.id.textMessage);
 
-
+        // Loading dialog view
         loadingDialog = createLoadingDialog();
         loadingDialog.show();
         Handler handler = new Handler();
@@ -55,10 +57,10 @@ public class MainActivity extends AppCompatActivity {
                 loadingDialog.dismiss();
 
                 // Perform any other task after the loading is complete
-                // For example, display a Toast message
-                Toast.makeText(MainActivity.this, "Loading Complete", Toast.LENGTH_SHORT).show();
+                // For example, display a Toast message -> Loading Complete
+                Toast.makeText(MainActivity.this, "Database is connected", Toast.LENGTH_SHORT).show();
             }
-        }, 5000); // Simulating a 3-second delay
+        }, 2000); // Simulating a 3-second delay
 
 //        // Loading dialog view
 //        loadingDialog = createLoadingDialog();
@@ -161,45 +163,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-        // Attach a ValueEventListener to retrieve data
-//        databaseReference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                // This method is called when the data is changed or fetched for the first time
-//                // Retrieve the data from the snapshot
-//
-//                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-//                    // Access individual child nodes
-//                    String key = snapshot.getKey();
-//                    String value = snapshot.getValue(String.class);
-//
-//                    // Do something with the data
-//
-//                    Toast.makeText(MainActivity.this, key +" : "+ value, Toast.LENGTH_LONG).show();
-//                    if (key.equals("planName")) {
-//                        // Use the value associated with the key
-//                        message.setText("Your Workout Plan is : " + value);
-//                        searchPlan = value;
-//                        Toast.makeText(MainActivity.this, key +" : "+ value, Toast.LENGTH_LONG).show();
-//                        break; // Exit the loop if the key is found
-//                    }
-//
-//
-//
-//                    Log.d("FirebaseData", "Value: " + value);
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError error) {
-//                // This method is called if the retrieval is canceled or fails
-//                Toast.makeText(MainActivity.this, "Failed to retrieve data: " + error.getMessage(), Toast.LENGTH_LONG).show();
-//                Log.e("FirebaseData", "Failed to retrieve data: " + error.getMessage());
-//            }
-//        });
 
     }
 

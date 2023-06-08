@@ -24,7 +24,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/count1"
+                    android:id="@+id/countA1"
                     android:layout_width="206dp"
                     android:layout_height="51dp"
                     android:layout_below="@+id/textview1"
@@ -43,10 +43,10 @@
                     android:textColor="@color/black" />
 
                 <EditText
-                    android:id="@+id/Count2"
+                    android:id="@+id/countA2"
                     android:layout_width="320dp"
                     android:layout_height="51dp"
-                    android:layout_below="@+id/count1"
+                    android:layout_below="@+id/countA1"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="47dp"
@@ -63,10 +63,10 @@
                     android:textColor="@color/black" />
 
                 <EditText
-                    android:id="@+id/Count3"
+                    android:id="@+id/countA3"
                     android:layout_width="320dp"
                     android:layout_height="51dp"
-                    android:layout_below="@+id/Count2"
+                    android:layout_below="@+id/countA2"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="47dp"
@@ -83,10 +83,10 @@
                     android:textColor="@color/black" />
 
                 <EditText
-                    android:id="@+id/Count4"
+                    android:id="@+id/countA4"
                     android:layout_width="320dp"
                     android:layout_height="51dp"
-                    android:layout_below="@+id/Count3"
+                    android:layout_below="@+id/countA3"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="47dp"
@@ -104,10 +104,10 @@
                     android:textColor="@color/black" />
 
                 <EditText
-                    android:id="@+id/Count5"
+                    android:id="@+id/countA5"
                     android:layout_width="320dp"
                     android:layout_height="51dp"
-                    android:layout_below="@+id/Count4"
+                    android:layout_below="@+id/countA4"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="47dp"
@@ -140,7 +140,7 @@
                     android:id="@+id/Count6"
                     android:layout_width="320dp"
                     android:layout_height="51dp"
-                    android:layout_below="@+id/Count5"
+                    android:layout_below="@+id/countA5"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="47dp"

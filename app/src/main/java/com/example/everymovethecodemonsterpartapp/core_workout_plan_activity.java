@@ -44,54 +44,76 @@ public class core_workout_plan_activity extends AppCompatActivity {
         // 1 =============================================================
 
         checkBox1 = findViewById(R.id.checkBox1);
-        Count1 = (EditText) findViewById(R.id.count1);
+        Count1 = (EditText) findViewById(R.id.countD1);
 
         increment1 = (Button) findViewById(R.id.increment1);
         decrement1 = (Button) findViewById(R.id.decrement1);
 
-        workoutMod(checkBox1, Count1, increment1, decrement1,"20");
+        workoutMod(checkBox1, Count1, increment1, decrement1,"120");
 
         // 2 =============================================================
 
         checkBox2 = findViewById(R.id.checkBox2);
-        Count2 = (EditText) findViewById(R.id.Count2);
+        Count2 = (EditText) findViewById(R.id.countD2);
 
         increment2 = (Button) findViewById(R.id.increment2);
         decrement2 = (Button) findViewById(R.id.decrement2);
 
-        workoutMod(checkBox2, Count2, increment2, decrement2, "30");
+        workoutMod(checkBox2, Count2, increment2, decrement2, "20");
 
         // 3 =============================================================
 
         checkBox3 = findViewById(R.id.checkBox3);
-        Count3 = (EditText) findViewById(R.id.Count3);
+        Count3 = (EditText) findViewById(R.id.countD3);
 
         increment3 = (Button) findViewById(R.id.increment3);
         decrement3 = (Button) findViewById(R.id.decrement3);
 
-        workoutMod(checkBox3, Count3, increment3, decrement3, "5");
+        workoutMod(checkBox3, Count3, increment3, decrement3, "10");
 
         // 4 =============================================================
 
 
         checkBox4 = findViewById(R.id.checkBox4);
-        Count4 = (EditText) findViewById(R.id.Count4);
+        Count4 = (EditText) findViewById(R.id.countD4);
 
         increment4 = (Button) findViewById(R.id.increment4);
         decrement4 = (Button) findViewById(R.id.decrement4);
 
-        workoutMod(checkBox4, Count4, increment4, decrement4, "5");
+        workoutMod(checkBox4, Count4, increment4, decrement4, "10");
 
         // 5 =============================================================
 
 
         checkBox5 = findViewById(R.id.checkBox5);
-        Count5 = (EditText) findViewById(R.id.Count5);
+        Count5 = (EditText) findViewById(R.id.countD5);
 
         increment5 = (Button) findViewById(R.id.increment5);
         decrement5 = (Button) findViewById(R.id.decrement5);
 
         workoutMod(checkBox5, Count5, increment5, decrement5, "10");
+
+        // 6 =============================================================
+
+
+        checkBox6 = findViewById(R.id.checkBox6);
+        Count6 = (EditText) findViewById(R.id.countD6);
+
+        increment6 = (Button) findViewById(R.id.increment6);
+        decrement6 = (Button) findViewById(R.id.decrement6);
+
+        workoutMod(checkBox6, Count6, increment6, decrement6, "10");
+
+        // 7 =============================================================
+
+
+        checkBox7 = findViewById(R.id.checkBox7);
+        Count7 = (EditText) findViewById(R.id.countD7);
+
+        increment7 = (Button) findViewById(R.id.increment7);
+        decrement7 = (Button) findViewById(R.id.decrement7);
+
+        workoutMod(checkBox7, Count7, increment7, decrement7, "10");
 
 
 // Score counting =============================================================
@@ -106,13 +128,15 @@ public class core_workout_plan_activity extends AppCompatActivity {
 
 //                int total = ((int) (((((Integer.parseInt(Count1.getText().toString())/10.0)*100.0)+((Integer.parseInt(Count2.getText().toString())/30.0)*100.0)+((Integer.parseInt(Count3.getText().toString())/5.0)*100.0)+((Integer.parseInt(Count4.getText().toString())/5.0)*100.0)+((Integer.parseInt(Count5.getText().toString())/10.0)*100.0)+((Integer.parseInt(Count6.getText().toString())/500.0)*100.0)+((Integer.parseInt(Count7.getText().toString())/2.0)*100.0))/7)*0.05));
 
-                double score1 = (Integer.parseInt(Count1.getText().toString())/10.0)*100.0;
-                double score2 = (Integer.parseInt(Count2.getText().toString())/30.0)*100.0;
-                double score3 = (Integer.parseInt(Count3.getText().toString())/5.0)*100.0;
-                double score4 = (Integer.parseInt(Count4.getText().toString())/5.0)*100.0;
+                double score1 = (Integer.parseInt(Count1.getText().toString())/120.0)*100.0;
+                double score2 = (Integer.parseInt(Count2.getText().toString())/20.0)*100.0;
+                double score3 = (Integer.parseInt(Count3.getText().toString())/10.0)*100.0;
+                double score4 = (Integer.parseInt(Count4.getText().toString())/10.0)*100.0;
                 double score5 = (Integer.parseInt(Count5.getText().toString())/10.0)*100.0;
+                double score6 = (Integer.parseInt(Count5.getText().toString())/10.0)*100.0;
+                double score7 = (Integer.parseInt(Count5.getText().toString())/10.0)*100.0;
 
-                int totalScore = (int) (((score1 + score2 + score3 + score4 + score5) / 5)*0.05);
+                int totalScore = (int) (((score1 + score2 + score3 + score4 + score5 + score6 + score7) / 700)*5);
 
                 builder.setTitle("Scores");
                 builder.setMessage("Your Total Score is "+ totalScore);
@@ -128,57 +152,7 @@ public class core_workout_plan_activity extends AppCompatActivity {
                     }
                 });
                 builder.show();
-
-
-
-                // Aarooopans code...!
-                String Username = "aaroophan";
-
-                Date date = new Date();
-                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-                String Date = formatter.format(date);;
-                String[] DateParts = Date.split("-");
-                int DateDay = Integer.parseInt(DateParts[2]);
-                int DateMonth = Integer.parseInt(DateParts[1]);
-                int DateYear = Integer.parseInt(DateParts[0]);
-
-                String CurrentDate = DateYear+"-"+DateMonth+"-"+DateDay;
-
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef3 = database.getReference("/HealthScore/" + Username);
-                myRef3.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot snapshot) {
-                        if(!snapshot.exists()){
-                            FirebaseDatabase database = FirebaseDatabase.getInstance();
-                            DatabaseReference myRef = database.getReference("/HealthScore");
-                            myRef.child(Username).setValue("");
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError error) {
-                        Log.w("AAAAAAAAAAAAAA", "Failed to read value.", error.toException());
-                    }
-                });
-
-
-                DatabaseReference myRef2 = database.getReference("/HealthScore/" + Username);
-
-                myRef2.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            myRef2.child(CurrentDate).setValue(totalScore);
-                            Log.d("AAAAAAAAAAAAAA", "INSERT VALUE");
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError error) {
-                        Log.w("AAAAAAAAAAAAAA", "Failed to read value.", error.toException());
-                    }
-                });
+                addToDb("aaroophan", totalScore);
             }
         });
 
@@ -187,6 +161,61 @@ public class core_workout_plan_activity extends AppCompatActivity {
     }
 
     // FUNCTIONS =============================================================
+
+
+//    Add to Database (Aaroophan)=========================================================
+
+    public void addToDb(String username,double totalScore){
+        // Aarooopans code...!
+
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String Date = formatter.format(date);
+        ;
+        String[] DateParts = Date.split("-");
+        int DateDay = Integer.parseInt(DateParts[2]);
+        int DateMonth = Integer.parseInt(DateParts[1]);
+        int DateYear = Integer.parseInt(DateParts[0]);
+
+        String CurrentDate = DateYear + "-" + DateMonth + "-" + DateDay;
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef3 = database.getReference("/HealthScore/" + username);
+        myRef3.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                if (!snapshot.exists()) {
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef = database.getReference("/HealthScore");
+                    myRef.child(username).setValue("");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Log.w("AAAAAAAAAAAAAA", "Failed to read value.", error.toException());
+            }
+        });
+
+        DatabaseReference myRef2 = database.getReference("/HealthScore/" + username);
+
+        myRef2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    myRef2.child(CurrentDate).setValue(totalScore);
+                    Log.d("AAAAAAAAAAAAAA", "INSERT VALUE");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Log.w("AAAAAAAAAAAAAA", "Failed to read value.", error.toException());
+            }
+        });
+    }
+
+
 // check minus value function =============================================================
     public void checkInvalidValue(int pCountInt, EditText Count){
         if (pCountInt < 0){

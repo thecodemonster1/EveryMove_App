@@ -26,7 +26,7 @@
 
 
         <EditText
-            android:id="@+id/count1"
+            android:id="@+id/countB1"
             android:layout_width="190dp"
             android:layout_height="51dp"
             android:layout_below="@+id/textview1"
@@ -47,7 +47,7 @@
             android:textSize="22sp" />
 
         <EditText
-            android:id="@+id/count2"
+            android:id="@+id/countB2"
             android:layout_width="190dp"
             android:layout_height="51dp"
             android:layout_below="@+id/textview1"
@@ -68,7 +68,7 @@
             android:textSize="22sp" />
 
         <EditText
-            android:id="@+id/count3"
+            android:id="@+id/countB3"
             android:layout_width="190dp"
             android:layout_height="51dp"
             android:layout_below="@+id/textview1"
@@ -89,7 +89,7 @@
             android:textSize="22sp" />
 
         <EditText
-            android:id="@+id/count4"
+            android:id="@+id/countB5"
             android:layout_width="190dp"
             android:layout_height="51dp"
             android:layout_below="@+id/textview1"
@@ -110,7 +110,7 @@
             android:textSize="22sp" />
 
         <EditText
-            android:id="@+id/count5"
+            android:id="@+id/countB4"
             android:layout_width="190dp"
             android:layout_height="51dp"
             android:layout_below="@+id/textview1"

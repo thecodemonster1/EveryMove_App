@@ -26,7 +26,7 @@
             android:textColor="#009B85"/>
 
         <EditText
-            android:id="@+id/count1"
+            android:id="@+id/countA1"
             android:layout_width="300dp"
             android:layout_height="51dp"
             android:layout_below="@+id/textview1"
@@ -44,10 +44,10 @@
             android:textColor="@color/black" />
 
         <EditText
-            android:id="@+id/Count2"
+            android:id="@+id/countA2"
             android:layout_width="300dp"
             android:layout_height="51dp"
-            android:layout_below="@+id/count1"
+            android:layout_below="@+id/countA1"
             android:layout_alignParentStart="true"
             android:layout_marginStart="32dp"
             android:layout_marginLeft="50dp"
@@ -62,10 +62,10 @@
             android:textColor="@color/black" />
 
         <EditText
-            android:id="@+id/Count3"
+            android:id="@+id/countA3"
             android:layout_width="300dp"
             android:layout_height="51dp"
-            android:layout_below="@+id/Count2"
+            android:layout_below="@+id/countA2"
             android:layout_alignParentStart="true"
             android:layout_marginStart="32dp"
             android:layout_marginLeft="30dp"
@@ -80,10 +80,10 @@
             android:textColor="@color/black" />
 
         <EditText
-            android:id="@+id/Count4"
+            android:id="@+id/countA4"
             android:layout_width="300dp"
             android:layout_height="51dp"
-            android:layout_below="@+id/Count3"
+            android:layout_below="@+id/countA3"
             android:layout_marginStart="32dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="13dp"
@@ -97,10 +97,10 @@
             android:textColor="@color/black" />
 
         <EditText
-            android:id="@+id/Count5"
+            android:id="@+id/countA5"
             android:layout_width="300dp"
             android:layout_height="51dp"
-            android:layout_below="@+id/Count4"
+            android:layout_below="@+id/countA4"
             android:layout_marginStart="32dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="13dp"
@@ -117,7 +117,7 @@
             android:id="@+id/Count6"
             android:layout_width="300dp"
             android:layout_height="51dp"
-            android:layout_below="@+id/Count5"
+            android:layout_below="@+id/countA5"
             android:layout_marginStart="32dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="13dp"

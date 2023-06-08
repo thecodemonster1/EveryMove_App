@@ -25,7 +25,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/count1"
+            android:id="@+id/countD1"
             android:layout_width="190dp"
             android:layout_height="51dp"
             android:layout_below="@+id/textview1"
@@ -37,7 +37,7 @@
             android:layout_marginEnd="220dp"
 
             android:background="@drawable/button_boarder"
-            android:drawablePadding="0dp"
+            android:drawablePadding="8dp"
             android:fontFamily="@font/source"
             android:inputType="number|numberDecimal"
             android:padding="8dp"
@@ -59,10 +59,10 @@
         <!--            app:cornerRadius="40dp"/>-->
 
         <EditText
-            android:id="@+id/Count3"
+            android:id="@+id/countD3"
             android:layout_width="320dp"
             android:layout_height="51dp"
-            android:layout_below="@+id/Count2"
+            android:layout_below="@+id/countD2"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="42dp"
@@ -70,7 +70,7 @@
             android:layout_marginTop="64dp"
             android:layout_marginEnd="220dp"
             android:background="@drawable/button_boarder"
-            android:drawablePadding="0dp"
+            android:drawablePadding="8dp"
             android:fontFamily="@font/source"
             android:inputType="number|numberDecimal"
             android:padding="0dp"
@@ -79,10 +79,10 @@
             android:textSize="22sp" />
 
         <EditText
-            android:id="@+id/Count6"
+            android:id="@+id/countD6"
             android:layout_width="320dp"
             android:layout_height="51dp"
-            android:layout_below="@+id/Count5"
+            android:layout_below="@+id/countD5"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="42dp"
@@ -93,16 +93,16 @@
             android:drawablePadding="0dp"
             android:fontFamily="@font/source"
             android:inputType="numberDecimal"
-            android:padding="0dp"
+            android:padding="8dp"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="22sp" />
 
         <EditText
-            android:id="@+id/Count7"
+            android:id="@+id/countD7"
             android:layout_width="320dp"
             android:layout_height="51dp"
-            android:layout_below="@+id/Count6"
+            android:layout_below="@+id/countD6"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="42dp"
@@ -110,12 +110,13 @@
             android:layout_marginTop="71dp"
             android:layout_marginEnd="220dp"
             android:background="@drawable/button_boarder"
-            android:drawablePadding="0dp"
+            android:drawablePadding="8dp"
             android:fontFamily="@font/source"
             android:inputType="numberDecimal"
             android:padding="0dp"
-            android:textAlignment="textStart"
-            android:textColor="@color/black" />
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
 
 
         <!--        1 ===================================================-->
@@ -190,10 +191,10 @@
             android:text="V-sit (20 Reps)" />
 
         <EditText
-            android:id="@+id/Count2"
+            android:id="@+id/countD2"
             android:layout_width="175dp"
             android:layout_height="51dp"
-            android:layout_below="@+id/count1"
+            android:layout_below="@+id/countD1"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="42dp"
@@ -201,7 +202,7 @@
             android:layout_marginTop="63dp"
             android:layout_marginEnd="220dp"
             android:background="@drawable/button_boarder"
-            android:drawablePadding="0dp"
+            android:drawablePadding="8dp"
             android:fontFamily="@font/source"
             android:inputType="number|numberDecimal"
             android:padding="0dp"
@@ -299,10 +300,10 @@
             android:text="10 Reps" />
 
         <EditText
-            android:id="@+id/Count4"
+            android:id="@+id/countD4"
             android:layout_width="320dp"
             android:layout_height="51dp"
-            android:layout_below="@+id/Count3"
+            android:layout_below="@+id/countD3"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="42dp"
@@ -310,7 +311,7 @@
             android:layout_marginTop="63dp"
             android:layout_marginEnd="220dp"
             android:background="@drawable/button_boarder"
-            android:drawablePadding="0dp"
+            android:drawablePadding="8dp"
             android:fontFamily="@font/source"
             android:inputType="number|numberDecimal"
             android:padding="0dp"
@@ -387,10 +388,10 @@
             android:foreground="@android:drawable/arrow_up_float" />
 
         <EditText
-            android:id="@+id/Count5"
+            android:id="@+id/countD5"
             android:layout_width="320dp"
             android:layout_height="51dp"
-            android:layout_below="@+id/Count4"
+            android:layout_below="@+id/countD4"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="42dp"
@@ -398,7 +399,7 @@
             android:layout_marginTop="55dp"
             android:layout_marginEnd="220dp"
             android:background="@drawable/button_boarder"
-            android:drawablePadding="0dp"
+            android:drawablePadding="8dp"
             android:fontFamily="@font/source"
             android:inputType="numberDecimal"
             android:padding="0dp"

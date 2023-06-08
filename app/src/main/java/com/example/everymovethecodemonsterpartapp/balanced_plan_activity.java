@@ -42,49 +42,49 @@ public class balanced_plan_activity extends AppCompatActivity {
         // 1 =============================================================
 
         checkBox1 = findViewById(R.id.checkBox1);
-        Count1 = (EditText) findViewById(R.id.count1);
+        Count1 = (EditText) findViewById(R.id.countA1);
 
         increment1 = (Button) findViewById(R.id.increment1);
         decrement1 = (Button) findViewById(R.id.decrement1);
 
-        workoutMod(checkBox1, Count1, increment1, decrement1,"10");
+        workoutMod(checkBox1, Count1, increment1, decrement1, "10");
 
         // 2 =============================================================
 
         checkBox2 = findViewById(R.id.checkBox2);
-        Count2 = (EditText) findViewById(R.id.Count2);
+        Count2 = (EditText) findViewById(R.id.countA2);
 
         increment2 = (Button) findViewById(R.id.increment2);
         decrement2 = (Button) findViewById(R.id.decrement2);
 
-        workoutMod(checkBox2, Count2, increment2, decrement2, "30");
+        workoutMod(checkBox2, Count2, increment2, decrement2, "20");
 
         // 3 =============================================================
 
         checkBox3 = findViewById(R.id.checkBox3);
-        Count3 = (EditText) findViewById(R.id.Count3);
+        Count3 = (EditText) findViewById(R.id.countA3);
 
         increment3 = (Button) findViewById(R.id.increment3);
         decrement3 = (Button) findViewById(R.id.decrement3);
 
-        workoutMod(checkBox3, Count3, increment3, decrement3, "5");
+        workoutMod(checkBox3, Count3, increment3, decrement3, "20");
 
         // 4 =============================================================
 
 
         checkBox4 = findViewById(R.id.checkBox4);
-        Count4 = (EditText) findViewById(R.id.Count4);
+        Count4 = (EditText) findViewById(R.id.countA4);
 
         increment4 = (Button) findViewById(R.id.increment4);
         decrement4 = (Button) findViewById(R.id.decrement4);
 
-        workoutMod(checkBox4, Count4, increment4, decrement4, "5");
+        workoutMod(checkBox4, Count4, increment4, decrement4, "60");
 
         // 5 =============================================================
 
 
         checkBox5 = findViewById(R.id.checkBox5);
-        Count5 = (EditText) findViewById(R.id.Count5);
+        Count5 = (EditText) findViewById(R.id.countA5);
 
         increment5 = (Button) findViewById(R.id.increment5);
         decrement5 = (Button) findViewById(R.id.decrement5);
@@ -92,11 +92,9 @@ public class balanced_plan_activity extends AppCompatActivity {
         workoutMod(checkBox5, Count5, increment5, decrement5, "10");
 
 
-
 // Score counting =============================================================
 
         Button addButton = (Button) findViewById(R.id.buttonAdd_plan_A);
-
 
 
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -105,16 +103,16 @@ public class balanced_plan_activity extends AppCompatActivity {
 
 //                int total = ((int) (((((Integer.parseInt(Count1.getText().toString())/10.0)*100.0)+((Integer.parseInt(Count2.getText().toString())/30.0)*100.0)+((Integer.parseInt(Count3.getText().toString())/5.0)*100.0)+((Integer.parseInt(Count4.getText().toString())/5.0)*100.0)+((Integer.parseInt(Count5.getText().toString())/10.0)*100.0)+((Integer.parseInt(Count6.getText().toString())/500.0)*100.0)+((Integer.parseInt(Count7.getText().toString())/2.0)*100.0))/7)*0.05));
 
-                double score1 = (Integer.parseInt(Count1.getText().toString())/10.0)*100.0;
-                double score2 = (Integer.parseInt(Count2.getText().toString())/30.0)*100.0;
-                double score3 = (Integer.parseInt(Count3.getText().toString())/5.0)*100.0;
-                double score4 = (Integer.parseInt(Count4.getText().toString())/5.0)*100.0;
-                double score5 = (Integer.parseInt(Count5.getText().toString())/10.0)*100.0;
+                double score1 = (Integer.parseInt(Count1.getText().toString()) / 10.0) * 100.0;
+                double score2 = (Integer.parseInt(Count2.getText().toString()) / 20.0) * 100.0;
+                double score3 = (Integer.parseInt(Count3.getText().toString()) / 20.0) * 100.0;
+                double score4 = (Integer.parseInt(Count4.getText().toString()) / 60.0) * 100.0;
+                double score5 = (Integer.parseInt(Count5.getText().toString()) / 10.0) * 100.0;
 
-                int totalScore = (int) (((score1 + score2 + score3 + score4 + score5) / 5)*0.05);
+                int totalScore = (int) (((score1 + score2 + score3 + score4 + score5) / 500) * 5);
 
                 builder.setTitle("Scores");
-                builder.setMessage("Your Total Score is "+ totalScore);
+                builder.setMessage("Your Total Score is " + totalScore);
 
                 // Set a positive button and its click listener
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -128,123 +126,126 @@ public class balanced_plan_activity extends AppCompatActivity {
                 });
                 builder.show();
 
-
-
-                // Aarooopans code...!
-                String Username = "aaroophan";
-
-                Date date = new Date();
-                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-                String Date = formatter.format(date);;
-                String[] DateParts = Date.split("-");
-                int DateDay = Integer.parseInt(DateParts[2]);
-                int DateMonth = Integer.parseInt(DateParts[1]);
-                int DateYear = Integer.parseInt(DateParts[0]);
-
-                String CurrentDate = DateYear+"-"+DateMonth+"-"+DateDay;
-
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef3 = database.getReference("/HealthScore/" + Username);
-                myRef3.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot snapshot) {
-                        if(!snapshot.exists()){
-                            FirebaseDatabase database = FirebaseDatabase.getInstance();
-                            DatabaseReference myRef = database.getReference("/HealthScore");
-                            myRef.child(Username).setValue("");
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError error) {
-                        Log.w("AAAAAAAAAAAAAA", "Failed to read value.", error.toException());
-                    }
-                });
-
-
-                DatabaseReference myRef2 = database.getReference("/HealthScore/" + Username);
-
-                myRef2.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            myRef2.child(CurrentDate).setValue(totalScore);
-                            Log.d("AAAAAAAAAAAAAA", "INSERT VALUE");
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError error) {
-                        Log.w("AAAAAAAAAAAAAA", "Failed to read value.", error.toException());
-                    }
-                });
+                addToDb("aaroophan", totalScore);
             }
         });
-
-
-
     }
 
-    // FUNCTIONS =============================================================
-// check minus value function =============================================================
-    public void checkInvalidValue(int pCountInt, EditText Count){
-        if (pCountInt < 0){
-            AlertDialog.Builder builder = new AlertDialog.Builder(balanced_plan_activity.this);
-            builder.setTitle("Error");
-            builder.setMessage("Invalid workout count!!!");
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        // FUNCTIONS =============================================================
+
+
+//    Add to Database (Aaroophan)=========================================================
+
+        public void addToDb(String username,double totalScore){
+            // Aarooopans code...!
+
+            Date date = new Date();
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            String Date = formatter.format(date);
+            ;
+            String[] DateParts = Date.split("-");
+            int DateDay = Integer.parseInt(DateParts[2]);
+            int DateMonth = Integer.parseInt(DateParts[1]);
+            int DateYear = Integer.parseInt(DateParts[0]);
+
+            String CurrentDate = DateYear + "-" + DateMonth + "-" + DateDay;
+
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference myRef3 = database.getReference("/HealthScore/" + username);
+            myRef3.addValueEventListener(new ValueEventListener() {
                 @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    // Perform the desired action when the OK button is clicked
-                    // This can be left empty if you just want to dismiss the dialog
-                    Count.setText("0");
+                public void onDataChange(DataSnapshot snapshot) {
+                    if (!snapshot.exists()) {
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference myRef = database.getReference("/HealthScore");
+                        myRef.child(username).setValue("");
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError error) {
+                    Log.w("AAAAAAAAAAAAAA", "Failed to read value.", error.toException());
                 }
             });
-            builder.show();
 
-        }
-    }
+            DatabaseReference myRef2 = database.getReference("/HealthScore/" + username);
 
-
-    public void workoutMod(CheckBox checkBox, EditText count, Button increment, Button decrement,String target){
-
-        count.setText("0");
-
-        increment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int pCountInt = Integer.parseInt(count.getText().toString().trim());
-                pCountInt++;
-                String pCountStr = Integer.toString(pCountInt);
-                count.setText(pCountStr);
-                checkBox.setChecked(false);
-            }
-        });
-
-        decrement.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int pCountInt = Integer.parseInt(count.getText().toString().trim());
-                pCountInt--;
-                String pCountStr = Integer.toString(pCountInt);
-                count.setText(pCountStr);
-                checkBox.setChecked(false);
-                checkInvalidValue(pCountInt, count);
-            }
-        });
-        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    // Checkbox is checked
-                    // Perform your logic here when the checkbox is clicked
-                    count.setText(target);
-                } else {
-                    // Checkbox is not checked
-                    // Perform your logic here when the checkbox is not clicked
-//                    count.setText("0");
+            myRef2.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        myRef2.child(CurrentDate).setValue(totalScore);
+                        Log.d("AAAAAAAAAAAAAA", "INSERT VALUE");
+                    }
                 }
+
+                @Override
+                public void onCancelled(DatabaseError error) {
+                    Log.w("AAAAAAAAAAAAAA", "Failed to read value.", error.toException());
+                }
+            });
+        }
+
+        // check minus value function =============================================================
+        public void checkInvalidValue ( int pCountInt, EditText count){
+            if (pCountInt < 0) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(balanced_plan_activity.this);
+                builder.setTitle("Error");
+                builder.setMessage("Invalid workout count!!!");
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Perform the desired action when the OK button is clicked
+                        // This can be left empty if you just want to dismiss the dialog
+                        count.setText("0");
+                    }
+                });
+                builder.show();
+
             }
-        });
-    }
+        }
+
+
+        public void workoutMod (CheckBox checkBox, EditText count, Button increment, Button
+        decrement, String target){
+
+            count.setText("0");
+
+            increment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pCountInt = Integer.parseInt(count.getText().toString().trim());
+                    pCountInt++;
+                    String pCountStr = Integer.toString(pCountInt);
+                    count.setText(pCountStr);
+                    checkBox.setChecked(false);
+                }
+            });
+
+            decrement.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pCountInt = Integer.parseInt(count.getText().toString().trim());
+                    pCountInt--;
+                    String pCountStr = Integer.toString(pCountInt);
+                    count.setText(pCountStr);
+                    checkBox.setChecked(false);
+                    checkInvalidValue(pCountInt, count);
+                }
+            });
+            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    if (isChecked) {
+                        // Checkbox is checked
+                        // Perform your logic here when the checkbox is clicked
+                        count.setText(target);
+                    } else {
+                        // Checkbox is not checked
+                        // Perform your logic here when the checkbox is not clicked
+//                    count.setText("0");
+                    }
+                }
+            });
+        }
 }

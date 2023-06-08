@@ -24,62 +24,8 @@
             android:textSize="36dp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/count1"
-            android:layout_width="190dp"
-            android:layout_height="51dp"
-            android:layout_below="@+id/textview1"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="42dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="41dp"
-            android:layout_marginEnd="220dp"
-
-            android:background="@drawable/button_boarder"
-            android:drawablePadding="0dp"
-            android:fontFamily="@font/source"
-            android:inputType="number|numberDecimal"
-            android:padding="8dp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="22sp" />
-
-        <!--        <Button-->
-        <!--            android:text="Sign Up"-->
-        <!--            android:fontFamily="@font/roboto"-->
-        <!--            android:id="@+id/signup_button"-->
-        <!--            android:layout_width="130dp"-->
-        <!--            android:layout_height="51dp"-->
-        <!--            android:layout_below="@+id/signup_weight"-->
-        <!--            android:layout_marginStart="120dp"-->
-        <!--            android:layout_marginLeft="30dp"-->
-        <!--            android:layout_marginTop="13dp"-->
-        <!--            android:textSize="15dp"-->
-        <!--            app:cornerRadius="40dp"/>-->
-
-        <EditText
-            android:id="@+id/Count3"
-            android:layout_width="320dp"
-            android:layout_height="51dp"
-            android:layout_below="@+id/Count2"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="42dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="64dp"
-            android:layout_marginEnd="220dp"
-            android:background="@drawable/button_boarder"
-            android:drawablePadding="0dp"
-            android:fontFamily="@font/source"
-            android:inputType="number|numberDecimal"
-            android:padding="0dp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="22sp" />
 
 
-        <!--        1 ===================================================-->
 
 
         <Button
@@ -95,6 +41,31 @@
             android:layout_marginBottom="-27dp"
             android:text="Calculate Scores"
             app:cornerRadius="40dp" />
+
+
+        <!--        1 ===================================================-->
+        <EditText
+            android:id="@+id/countC1"
+            android:layout_width="190dp"
+            android:layout_height="51dp"
+            android:layout_below="@+id/textview1"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="42dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="41dp"
+            android:layout_marginEnd="220dp"
+
+            android:background="@drawable/button_boarder"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/source"
+            android:inputType="number|numberDecimal"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+
+
 
         <TextView
             android:id="@+id/textView"
@@ -127,9 +98,6 @@
             android:background="#000E0E0E"
             android:foreground="@android:drawable/arrow_up_float" />
 
-
-        <!--        2 ===================================================-->
-
         <Button
             android:id="@+id/decrement1"
             android:layout_width="60dp"
@@ -140,6 +108,11 @@
             android:layout_marginTop="149dp"
             android:background="#00020202"
             android:foreground="@android:drawable/arrow_down_float" />
+
+
+        <!--        2 ===================================================-->
+
+
 
         <Button
             android:id="@+id/increment2"
@@ -173,18 +146,18 @@
             android:text="Glute Bridge (20 Reps)" />
 
         <EditText
-            android:id="@+id/Count2"
+            android:id="@+id/countC2"
             android:layout_width="175dp"
             android:layout_height="51dp"
-            android:layout_below="@+id/count1"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="41dp"
+            android:layout_marginStart="40dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="59dp"
-            android:layout_marginEnd="221dp"
+            android:layout_marginTop="242dp"
+            android:layout_marginEnd="222dp"
             android:background="@drawable/button_boarder"
-            android:drawablePadding="0dp"
+            android:drawablePadding="8dp"
             android:fontFamily="@font/source"
             android:inputType="number|numberDecimal"
             android:padding="0dp"
@@ -204,10 +177,6 @@
             android:foreground="@android:drawable/arrow_down_float" />
 
         <!--        3 ===================================================-->
-
-
-        <!--        4 ===================================================-->
-
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
@@ -217,6 +186,26 @@
             android:layout_marginStart="157dp"
             android:layout_marginTop="322dp"
             android:text="Plank (1 min)" />
+
+        <EditText
+            android:id="@+id/countC3"
+            android:layout_width="320dp"
+            android:layout_height="51dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="41dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="352dp"
+            android:layout_marginEnd="221dp"
+            android:background="@drawable/button_boarder"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/source"
+            android:inputType="number|numberDecimal"
+            android:padding="0dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
 
         <Button
             android:id="@+id/decrement3"
@@ -250,6 +239,10 @@
             android:layout_marginTop="349dp"
             android:text="60 Sec" />
 
+        <!--        4 ===================================================-->
+
+
+
         <CheckBox
             android:id="@+id/checkBox4"
             android:layout_width="wrap_content"
@@ -261,18 +254,18 @@
             android:text="10 Reps x2" />
 
         <EditText
-            android:id="@+id/Count4"
+            android:id="@+id/countC4"
             android:layout_width="320dp"
             android:layout_height="51dp"
-            android:layout_below="@+id/Count3"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="44dp"
+            android:layout_marginStart="43dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="67dp"
-            android:layout_marginEnd="218dp"
+            android:layout_marginTop="467dp"
+            android:layout_marginEnd="219dp"
             android:background="@drawable/button_boarder"
-            android:drawablePadding="0dp"
+            android:drawablePadding="8dp"
             android:fontFamily="@font/source"
             android:inputType="number|numberDecimal"
             android:padding="0dp"
@@ -349,22 +342,24 @@
             android:foreground="@android:drawable/arrow_up_float" />
 
         <EditText
-            android:id="@+id/Count5"
+            android:id="@+id/countC5"
             android:layout_width="320dp"
             android:layout_height="51dp"
-            android:layout_below="@+id/Count4"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="47dp"
+            android:layout_marginStart="40dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="52dp"
-            android:layout_marginEnd="214dp"
+            android:layout_marginTop="576dp"
+            android:layout_marginEnd="221dp"
             android:background="@drawable/button_boarder"
-            android:drawablePadding="0dp"
+            android:drawablePadding="8dp"
             android:fontFamily="@font/source"
             android:inputType="numberDecimal"
             android:padding="0dp"
-            android:textColor="@color/black" />
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
 
         <CheckBox
             android:id="@+id/checkBox5"
@@ -420,42 +415,23 @@
             android:background="#00020202"
             android:foreground="@android:drawable/arrow_down_float" />
 
-        <EditText
-            android:id="@+id/Count6"
-            android:layout_width="320dp"
-            android:layout_height="51dp"
-            android:layout_below="@+id/Count4"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="47dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="52dp"
-            android:layout_marginEnd="214dp"
-            android:background="@drawable/button_boarder"
-            android:drawablePadding="0dp"
-            android:fontFamily="@font/source"
-            android:inputType="number|numberDecimal"
-            android:padding="0dp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="22sp" />
 
         <EditText
-            android:id="@+id/count6"
+            android:id="@+id/countC6"
             android:layout_width="320dp"
             android:layout_height="51dp"
-            android:layout_below="@+id/Count4"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="41dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="160dp"
-            android:layout_marginEnd="211dp"
+            android:layout_marginTop="676dp"
+            android:layout_marginEnd="220dp"
             android:background="@drawable/button_boarder"
-            android:drawablePadding="0dp"
+            android:drawablePadding="8dp"
             android:fontFamily="@font/source"
-            android:inputType="numberDecimal"
-            android:padding="0dp"
+            android:inputType="number|numberDecimal"
+            android:padding="8dp"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="22sp" />

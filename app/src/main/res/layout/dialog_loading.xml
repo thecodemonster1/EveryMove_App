@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="#14000000"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -15,6 +16,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Loading..."
-        android:textAppearance="?android:textAppearanceMedium" />
+        android:textAlignment="center"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
 </LinearLayout>
