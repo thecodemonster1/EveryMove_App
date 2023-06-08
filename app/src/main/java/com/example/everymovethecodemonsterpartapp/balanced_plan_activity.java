@@ -24,15 +24,16 @@ import java.util.Date;
 
 public class balanced_plan_activity extends AppCompatActivity {
 
-    EditText Count1, Count2, Count3, Count4, Count5, Count6, Count7;
-    CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7;
-    Button increment1, increment2, increment3, increment4, increment5, increment6, increment7;
-    Button decrement1, decrement2, decrement3, decrement4, decrement5, decrement6, decrement7;
+    EditText Count1, Count2, Count3, Count4, Count5;
+    CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5;
+    Button increment1, increment2, increment3, increment4, increment5;
+    Button decrement1, decrement2, decrement3, decrement4, decrement5;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_balanced_plan);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(balanced_plan_activity.this);
@@ -41,7 +42,7 @@ public class balanced_plan_activity extends AppCompatActivity {
         // 1 =============================================================
 
         checkBox1 = findViewById(R.id.checkBox1);
-        Count1 = (EditText) findViewById(R.id.Count1);
+        Count1 = (EditText) findViewById(R.id.count1);
 
         increment1 = (Button) findViewById(R.id.increment1);
         decrement1 = (Button) findViewById(R.id.decrement1);
@@ -90,25 +91,6 @@ public class balanced_plan_activity extends AppCompatActivity {
 
         workoutMod(checkBox5, Count5, increment5, decrement5, "10");
 
-        // 6 =============================================================
-
-        checkBox6 = findViewById(R.id.checkBox6);
-        Count6 = (EditText) findViewById(R.id.Count6);
-
-        increment6 = (Button) findViewById(R.id.increment6);
-        decrement6 = (Button) findViewById(R.id.decrement6);
-
-        workoutMod(checkBox6, Count6, increment6, decrement6, "500");
-
-        // 7 =============================================================
-
-        checkBox7 = findViewById(R.id.checkBox7);
-        Count7 = (EditText) findViewById(R.id.Count7);
-
-        increment7 = (Button) findViewById(R.id.increment7);
-        decrement7 = (Button) findViewById(R.id.decrement7);
-
-        workoutMod(checkBox7, Count7, increment7, decrement7, "2");
 
 
 // Score counting =============================================================
@@ -128,10 +110,8 @@ public class balanced_plan_activity extends AppCompatActivity {
                 double score3 = (Integer.parseInt(Count3.getText().toString())/5.0)*100.0;
                 double score4 = (Integer.parseInt(Count4.getText().toString())/5.0)*100.0;
                 double score5 = (Integer.parseInt(Count5.getText().toString())/10.0)*100.0;
-                double score6 = (Integer.parseInt(Count6.getText().toString())/500.0)*100.0;
-                double score7 = (Integer.parseInt(Count7.getText().toString())/2.0)*100.0;
 
-                int totalScore = (int) (((score1 + score2 + score3 + score4 + score5 + score6 + score7) / 7)*0.05);
+                int totalScore = (int) (((score1 + score2 + score3 + score4 + score5) / 5)*0.05);
 
                 builder.setTitle("Scores");
                 builder.setMessage("Your Total Score is "+ totalScore);

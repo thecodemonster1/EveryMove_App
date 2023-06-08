@@ -2,8 +2,11 @@ package com.example.everymovethecodemonsterpartapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -19,32 +22,48 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
     private Button inputBtn;
     private TextView message;
-    private String uParent;
-    private String uChild;
-    private String searchPlan;
-    private Boolean test;
+    private String keyO;
+    private String valueO;
+    private String searchUser;
+    public Dialog loadingDialog;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
+
+        searchUser = "testID3"; // Select a userID to navigate to their workout plan
+
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference("Personal Plans").child("testID");
-
-
-        //set title of the app
-        getSupportActionBar().setTitle("Every Move");
-
+        DatabaseReference databaseReference = firebaseDatabase.getReference("Personal Plans").child(searchUser);
 
         //set the variables of buttons
         inputBtn = (Button) findViewById(R.id.buttonInput);
         message = (TextView) findViewById(R.id.textMessage);
 
 
+        loadingDialog = createLoadingDialog();
+        loadingDialog.show();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Hide the loading dialog
+                loadingDialog.dismiss();
 
+                // Perform any other task after the loading is complete
+                // For example, display a Toast message
+                Toast.makeText(MainActivity.this, "Loading Complete", Toast.LENGTH_SHORT).show();
+            }
+        }, 5000); // Simulating a 3-second delay
 
+//        // Loading dialog view
+//        loadingDialog = createLoadingDialog();
+//        loadingDialog.show();
+//        loadingDialog.dismiss();
 
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -59,12 +78,13 @@ public class MainActivity extends AppCompatActivity {
                     String value = snapshot.getValue(String.class);
 
                     // Do something with the data
-
                     Toast.makeText(MainActivity.this, key +" : "+ value, Toast.LENGTH_LONG).show();
                     if (key.equals("planName")) {
+                        keyO = key;
+                        valueO = value;
                         // Use the value associated with the key
                         message.setText("Your Workout Plan is : " + value);
-                        Toast.makeText(MainActivity.this, key +" : "+ value, Toast.LENGTH_LONG).show();
+//                        Toast.makeText(MainActivity.this, key +" : "+ value, Toast.LENGTH_LONG).show();
                         break; // Exit the loop if the key is found
                     }
                     Log.d("FirebaseData", "Value: " + value);
@@ -101,14 +121,44 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(MainActivity.this, "Error in Database", Toast.LENGTH_LONG).show();
 //            }
 //        });
-        test = true;
+
+        // Input Button function
         inputBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (test){
-                    Intent i = new Intent(getApplicationContext(), balanced_plan_activity.class);
-                    startActivity(i);
+                // Loading dialog view
+                loadingDialog = createLoadingDialog();
+                loadingDialog.show();
+
+                if(keyO.equals("planName")){
+                    if(valueO.trim().equals("Balanced")){ // Balanced
+
+                        Intent i = new Intent(MainActivity.this, balanced_plan_activity.class);
+                        Toast.makeText(getApplicationContext(), keyO +" : "+ valueO, Toast.LENGTH_LONG).show();
+                        startActivity(i);
+
+                    }else if(valueO.trim().equals("Aerobics")){ // Aerobics
+
+                        Intent i = new Intent(MainActivity.this, aerobics_plan_activity.class);
+                        Toast.makeText(getApplicationContext(), keyO +" : "+ valueO, Toast.LENGTH_LONG).show();
+                        startActivity(i);
+
+                    }else if(valueO.trim().equals("Strength")){ // Strength
+
+                        Intent i = new Intent(MainActivity.this, strength_plan_activity.class);
+                        Toast.makeText(getApplicationContext(), keyO +" : "+ valueO, Toast.LENGTH_LONG).show();
+                        startActivity(i);
+                        loadingDialog.dismiss();
+
+                    }else if(valueO.trim().equals("core workouts")){ // core workouts
+
+                        Intent i = new Intent(MainActivity.this, core_workout_plan_activity.class);
+                        Toast.makeText(getApplicationContext(), keyO +" : "+ valueO, Toast.LENGTH_LONG).show();
+                        startActivity(i);
+
+                    }
                 }
+
             }
         });
 
@@ -152,4 +202,16 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
     }
+
+
+    //================================FUNCTIONS==========================================
+
+    private Dialog createLoadingDialog() {
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialog_loading);
+        dialog.setCancelable(false);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        return dialog;
+    }
+
 }

@@ -9,14 +9,14 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="750dp">
 
         <TextView
             android:id="@+id/textview1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="51dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/lobster"
             android:text="Daily Data"
             android:textAlignment="center"
@@ -24,26 +24,7 @@
             android:textSize="36dp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/Count1"
-            android:layout_width="190dp"
-            android:layout_height="51dp"
-            android:layout_below="@+id/textview1"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="42dp"
-            android:layout_marginEnd="220dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="41dp"
 
-            android:background="@drawable/button_boarder"
-            android:drawableLeft="@mipmap/pushup1_foreground"
-            android:drawablePadding="0dp"
-            android:fontFamily="@font/source"
-            android:inputType="number|numberDecimal"
-            android:padding="8dp"
-            android:textColor="@color/black"
-            android:textSize="22sp" />
 
         <!--        <Button-->
         <!--            android:text="Sign Up"-->
@@ -58,6 +39,167 @@
         <!--            android:textSize="15dp"-->
         <!--            app:cornerRadius="40dp"/>-->
 
+
+        <!--        1 ===================================================-->
+
+
+        <Button
+            android:id="@+id/buttonAdd_plan_A"
+            android:layout_width="154dp"
+            android:layout_height="74dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="138dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="656dp"
+            android:layout_marginEnd="118dp"
+            android:layout_marginBottom="21dp"
+            android:text="Calculate Scores"
+            app:cornerRadius="40dp" />
+
+        <EditText
+            android:id="@+id/count1"
+            android:layout_width="190dp"
+            android:layout_height="51dp"
+            android:layout_below="@+id/textview1"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="42dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="41dp"
+            android:layout_marginEnd="220dp"
+
+            android:background="@drawable/button_boarder"
+            android:drawablePadding="0dp"
+            android:fontFamily="@font/source"
+            android:inputType="number|numberDecimal"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="155dp"
+            android:layout_marginTop="100dp"
+            android:text="Knee Bend (10 Reps)" />
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="271dp"
+            android:layout_marginTop="130dp"
+            android:text="10 Reps" />
+
+        <Button
+            android:id="@+id/increment1"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="198dp"
+            android:layout_marginTop="123dp"
+            android:background="#000E0E0E"
+            android:foreground="@android:drawable/arrow_up_float" />
+        <Button
+            android:id="@+id/decrement1"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="197dp"
+            android:layout_marginTop="149dp"
+            android:background="#00020202"
+            android:foreground="@android:drawable/arrow_down_float" />
+
+
+        <!--        2 ===================================================-->
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="135dp"
+            android:layout_marginTop="212dp"
+            android:text="Wall Pushup (20 Reps)" />
+
+        <EditText
+            android:id="@+id/Count2"
+            android:layout_width="175dp"
+            android:layout_height="51dp"
+            android:layout_below="@+id/count1"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="41dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="62dp"
+            android:layout_marginEnd="221dp"
+            android:background="@drawable/button_boarder"
+            android:drawablePadding="0dp"
+            android:fontFamily="@font/source"
+            android:inputType="number|numberDecimal"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="267dp"
+            android:layout_marginTop="244dp"
+            android:text="20 Reps" />
+
+        <Button
+            android:id="@+id/increment2"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="195dp"
+            android:layout_marginTop="237dp"
+            android:background="#000E0E0E"
+            android:foreground="@android:drawable/arrow_up_float" />
+
+        <Button
+            android:id="@+id/decrement2"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="195dp"
+            android:layout_marginTop="265dp"
+            android:background="#00020202"
+            android:foreground="@android:drawable/arrow_down_float" />
+
+        <!--        3 ===================================================-->
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="142dp"
+            android:layout_marginTop="327dp"
+            android:text="Shoulder rolls (20 Reps)" />
+
         <EditText
             android:id="@+id/Count3"
             android:layout_width="320dp"
@@ -70,186 +212,13 @@
             android:layout_marginTop="64dp"
             android:layout_marginEnd="220dp"
             android:background="@drawable/button_boarder"
-            android:drawableLeft="@mipmap/crunches_foreground"
             android:drawablePadding="0dp"
             android:fontFamily="@font/source"
             android:inputType="number|numberDecimal"
-            android:padding="0dp"
-            android:textColor="@color/black" />
-
-        <EditText
-            android:id="@+id/Count6"
-            android:layout_width="320dp"
-            android:layout_height="51dp"
-            android:layout_below="@+id/Count5"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="42dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="55dp"
-            android:layout_marginEnd="220dp"
-            android:background="@drawable/button_boarder"
-            android:drawableLeft="@mipmap/running_foreground"
-            android:drawablePadding="0dp"
-            android:fontFamily="@font/source"
-            android:inputType="numberDecimal"
-            android:padding="0dp"
-            android:textColor="@color/black" />
-
-        <EditText
-            android:id="@+id/Count7"
-            android:layout_width="320dp"
-            android:layout_height="51dp"
-            android:layout_below="@+id/Count6"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="42dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="71dp"
-            android:layout_marginEnd="220dp"
-            android:background="@drawable/button_boarder"
-            android:drawableLeft="@mipmap/cross_crunches_foreground"
-            android:drawablePadding="0dp"
-            android:fontFamily="@font/source"
-            android:inputType="numberDecimal"
-            android:padding="0dp"
-            android:textAlignment="textStart"
-            android:textColor="@color/black" />
-
-
-        <!--        1 ===================================================-->
-
-        <Button
-            android:id="@+id/buttonAdd_plan_A"
-            android:layout_width="154dp"
-            android:layout_height="74dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="120dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="920dp"
-            android:layout_marginBottom="-1dp"
-            android:text="Calculate Scores"
-            app:cornerRadius="40dp" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="157dp"
-            android:layout_marginTop="118dp"
-            android:text="Push-Ups (10 Reps)" />
-
-        <CheckBox
-            android:id="@+id/checkBox1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="266dp"
-            android:layout_marginTop="147dp"
-            android:text="10 Reps" />
-
-        <Button
-            android:id="@+id/increment1"
-            android:layout_width="60dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="141dp"
-            android:background="#000E0E0E"
-            android:foreground="@android:drawable/arrow_up_float" />
-
-        <Button
-            android:id="@+id/decrement1"
-            android:layout_width="60dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="169dp"
-            android:background="#00020202"
-            android:foreground="@android:drawable/arrow_down_float" />
-
-
-<!--        2 ===================================================-->
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="109dp"
-            android:layout_marginTop="233dp"
-            android:text="Side-Plank (30 Sec for Each Side)" />
-
-        <EditText
-            android:id="@+id/Count2"
-            android:layout_width="175dp"
-            android:layout_height="51dp"
-            android:layout_below="@+id/Count1"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="42dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="63dp"
-            android:layout_marginEnd="220dp"
-            android:background="@drawable/button_boarder"
-            android:drawableLeft="@mipmap/side_plank_foreground"
-            android:drawablePadding="0dp"
-            android:fontFamily="@font/source"
-            android:inputType="number|numberDecimal"
-            android:padding="0dp"
-            android:textColor="@color/black" />
-
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="263dp"
-            android:layout_marginTop="261dp"
-            android:text="30 Sec x 2" />
-
-        <Button
-            android:id="@+id/increment2"
-            android:layout_width="60dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="197dp"
-            android:layout_marginTop="255dp"
-            android:background="#000E0E0E"
-            android:foreground="@android:drawable/arrow_up_float" />
-
-        <Button
-            android:id="@+id/decrement2"
-            android:layout_width="60dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="197dp"
-            android:layout_marginTop="283dp"
-            android:background="#00020202"
-            android:foreground="@android:drawable/arrow_down_float" />
-
-        <!--        3 ===================================================-->
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="153dp"
-            android:layout_marginTop="346dp"
-            android:text="Crunches (5 Reps)" />
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22dp" />
 
         <Button
             android:id="@+id/increment3"
@@ -257,8 +226,8 @@
             android:layout_height="35dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="196dp"
-            android:layout_marginTop="369dp"
+            android:layout_marginStart="194dp"
+            android:layout_marginTop="351dp"
             android:background="#000E0E0E"
             android:foreground="@android:drawable/arrow_up_float" />
 
@@ -268,8 +237,8 @@
             android:layout_height="35dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="196dp"
-            android:layout_marginTop="397dp"
+            android:layout_marginStart="194dp"
+            android:layout_marginTop="379dp"
             android:background="#00020202"
             android:foreground="@android:drawable/arrow_down_float" />
 
@@ -279,12 +248,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="262dp"
-            android:layout_marginTop="375dp"
-            android:text="5 Reps" />
-
+            android:layout_marginStart="271dp"
+            android:layout_marginTop="355dp"
+            android:text="20 Reps" />
 
         <!--        4 ===================================================-->
+
+
 
         <CheckBox
             android:id="@+id/checkBox4"
@@ -292,9 +262,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="265dp"
-            android:layout_marginTop="487dp"
-            android:text="5 Reps" />
+            android:layout_marginStart="271dp"
+            android:layout_marginTop="470dp"
+            android:text="1 min x2" />
 
         <EditText
             android:id="@+id/Count4"
@@ -308,13 +278,14 @@
             android:layout_marginTop="63dp"
             android:layout_marginEnd="220dp"
             android:background="@drawable/button_boarder"
-            android:drawableLeft="@mipmap/supermans_foreground"
             android:drawablePadding="0dp"
             android:fontFamily="@font/source"
             android:inputType="number|numberDecimal"
-            android:padding="0dp"
+            android:padding="8dp"
             android:scaleType="fitStart"
-            android:textColor="@color/black" />
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22dp" />
 
         <TextView
             android:id="@+id/textView4"
@@ -322,9 +293,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="156dp"
-            android:layout_marginTop="458dp"
-            android:text="Supermans (5 Reps)" />
+            android:layout_marginStart="117dp"
+            android:layout_marginTop="440dp"
+            android:text="One-Leg stand (1 min) x2 sides" />
 
         <Button
             android:id="@+id/decrement4"
@@ -332,8 +303,8 @@
             android:layout_height="35dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="199dp"
-            android:layout_marginTop="509dp"
+            android:layout_marginStart="197dp"
+            android:layout_marginTop="491dp"
             android:background="#00020202"
             android:foreground="@android:drawable/arrow_down_float" />
 
@@ -343,8 +314,8 @@
             android:layout_height="35dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="199dp"
-            android:layout_marginTop="481dp"
+            android:layout_marginStart="197dp"
+            android:layout_marginTop="463dp"
             android:background="#000E0E0E"
             android:foreground="@android:drawable/arrow_up_float" />
 
@@ -357,9 +328,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="159dp"
-            android:layout_marginTop="565dp"
-            android:text="Jumping jack (10 Reps)" />
+            android:layout_marginStart="144dp"
+            android:layout_marginTop="547dp"
+            android:text="Cursty Lunge (10 Reps)" />
 
         <Button
             android:id="@+id/decrement5"
@@ -367,8 +338,8 @@
             android:layout_height="35dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="202dp"
-            android:layout_marginTop="616dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="598dp"
             android:background="#00020202"
             android:foreground="@android:drawable/arrow_down_float" />
 
@@ -378,8 +349,8 @@
             android:layout_height="35dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="202dp"
-            android:layout_marginTop="588dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="570dp"
             android:background="#000E0E0E"
             android:foreground="@android:drawable/arrow_up_float" />
 
@@ -395,12 +366,13 @@
             android:layout_marginTop="55dp"
             android:layout_marginEnd="220dp"
             android:background="@drawable/button_boarder"
-            android:drawableLeft="@mipmap/jumping_jack_foreground"
             android:drawablePadding="0dp"
             android:fontFamily="@font/source"
             android:inputType="numberDecimal"
-            android:padding="0dp"
-            android:textColor="@color/black" />
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22dp" />
 
         <CheckBox
             android:id="@+id/checkBox5"
@@ -408,99 +380,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="268dp"
-            android:layout_marginTop="594dp"
+            android:layout_marginStart="271dp"
+            android:layout_marginTop="579dp"
             android:text="10 Reps" />
-
-
-        <!--        6 ===================================================-->
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="158dp"
-            android:layout_marginTop="671dp"
-            android:text="Run Distance (500 m)" />
-
-        <CheckBox
-            android:id="@+id/checkBox6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="267dp"
-            android:layout_marginTop="700dp"
-            android:text="500m" />
-
-        <Button
-            android:id="@+id/increment6"
-            android:layout_width="60dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="201dp"
-            android:layout_marginTop="694dp"
-            android:background="#000E0E0E"
-            android:foreground="@android:drawable/arrow_up_float" />
-
-        <Button
-            android:id="@+id/decrement6"
-            android:layout_width="60dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="201dp"
-            android:layout_marginTop="722dp"
-            android:background="#00020202"
-            android:foreground="@android:drawable/arrow_down_float" />
-
-
-        <!--        7 ===================================================-->
-
-        <CheckBox
-            android:id="@+id/checkBox7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="265dp"
-            android:layout_marginTop="822dp"
-            android:text="2 Reps" />
-
-        <Button
-            android:id="@+id/increment7"
-            android:layout_width="60dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="199dp"
-            android:layout_marginTop="816dp"
-            android:background="#000E0E0E"
-            android:foreground="@android:drawable/arrow_up_float" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="123dp"
-            android:layout_marginTop="793dp"
-            android:text="Cross-Body-Crunches(2 Reps)" />
-
-        <Button
-            android:id="@+id/decrement7"
-            android:layout_width="60dp"
-            android:layout_height="35dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="199dp"
-            android:layout_marginTop="844dp"
-            android:background="#00020202"
-            android:foreground="@android:drawable/arrow_down_float" />
 
 
     </RelativeLayout>
