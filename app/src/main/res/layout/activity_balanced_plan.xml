@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="#77BDA54E"
     tools:context=".RegActivity">
 
@@ -24,20 +24,6 @@
             android:textSize="36dp"
             android:textStyle="bold" />
 
-
-
-        <!--        <Button-->
-        <!--            android:text="Sign Up"-->
-        <!--            android:fontFamily="@font/roboto"-->
-        <!--            android:id="@+id/signup_button"-->
-        <!--            android:layout_width="130dp"-->
-        <!--            android:layout_height="51dp"-->
-        <!--            android:layout_below="@+id/signup_weight"-->
-        <!--            android:layout_marginStart="120dp"-->
-        <!--            android:layout_marginLeft="30dp"-->
-        <!--            android:layout_marginTop="13dp"-->
-        <!--            android:textSize="15dp"-->
-        <!--            app:cornerRadius="40dp"/>-->
 
 
         <!--        1 ===================================================-->

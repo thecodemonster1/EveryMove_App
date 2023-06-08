@@ -111,22 +111,37 @@ public class balanced_plan_activity extends AppCompatActivity {
 
                 int totalScore = (int) (((score1 + score2 + score3 + score4 + score5) / 500) * 5);
 
-                builder.setTitle("Scores");
-                builder.setMessage("Your Total Score is " + totalScore);
+                if (totalScore == 0) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(balanced_plan_activity.this);
+                    builder.setTitle("Error");
+                    builder.setMessage("Invalid Score... You must be get atleast 1...!");
+                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Perform the desired action when the OK button is clicked
+                            // This can be left empty if you just want to dismiss the dialog
 
-                // Set a positive button and its click listener
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Perform the desired action when the OK button is clicked
-                        // This can be left empty if you just want to dismiss the dialog
-                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(i);
-                    }
-                });
-                builder.show();
+                        }
+                    });
+                    builder.show();
+                }else if (totalScore < 5){
 
-                addToDb("aaroophan", totalScore);
+                    builder.setTitle("Scores");
+                    builder.setMessage("Your Total Score is "+ totalScore);
+
+                    // Set a positive button and its click listener
+                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Perform the desired action when the OK button is clicked
+                            // This can be left empty if you just want to dismiss the dialog
+                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(i);
+                        }
+                    });
+                    builder.show();
+                    addToDb("aaroophan", totalScore);
+                }
             }
         });
     }

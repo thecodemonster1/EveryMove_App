@@ -46,21 +46,7 @@ public class MainActivity extends AppCompatActivity {
         inputBtn = (Button) findViewById(R.id.buttonInput);
         message = (TextView) findViewById(R.id.textMessage);
 
-        // Loading dialog view
-        loadingDialog = createLoadingDialog();
-        loadingDialog.show();
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // Hide the loading dialog
-                loadingDialog.dismiss();
 
-                // Perform any other task after the loading is complete
-                // For example, display a Toast message -> Loading Complete
-                Toast.makeText(MainActivity.this, "Database is connected", Toast.LENGTH_SHORT).show();
-            }
-        }, 2000); // Simulating a 3-second delay
 
 //        // Loading dialog view
 //        loadingDialog = createLoadingDialog();
@@ -68,11 +54,14 @@ public class MainActivity extends AppCompatActivity {
 //        loadingDialog.dismiss();
 
 
+        loadDialog();
         databaseReference.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called when the data is changed or fetched for the first time
                 // Retrieve the data from the snapshot
+
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     // Access individual child nodes
@@ -80,14 +69,17 @@ public class MainActivity extends AppCompatActivity {
                     String value = snapshot.getValue(String.class);
 
                     // Do something with the data
-                    Toast.makeText(MainActivity.this, key +" : "+ value, Toast.LENGTH_LONG).show();
+//                    Toast.makeText(MainActivity.this, key +" : "+ value, Toast.LENGTH_LONG).show();
                     if (key.equals("planName")) {
                         keyO = key;
                         valueO = value;
+
                         // Use the value associated with the key
                         message.setText("Your Workout Plan is : " + value);
+                        loadingDialog.dismiss();
 //                        Toast.makeText(MainActivity.this, key +" : "+ value, Toast.LENGTH_LONG).show();
                         break; // Exit the loop if the key is found
+
                     }
                     Log.d("FirebaseData", "Value: " + value);
                 }
@@ -138,12 +130,14 @@ public class MainActivity extends AppCompatActivity {
                         Intent i = new Intent(MainActivity.this, balanced_plan_activity.class);
                         Toast.makeText(getApplicationContext(), keyO +" : "+ valueO, Toast.LENGTH_LONG).show();
                         startActivity(i);
+                        loadingDialog.dismiss();
 
                     }else if(valueO.trim().equals("Aerobics")){ // Aerobics
 
                         Intent i = new Intent(MainActivity.this, aerobics_plan_activity.class);
                         Toast.makeText(getApplicationContext(), keyO +" : "+ valueO, Toast.LENGTH_LONG).show();
                         startActivity(i);
+                        loadingDialog.dismiss();
 
                     }else if(valueO.trim().equals("Strength")){ // Strength
 
@@ -157,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
                         Intent i = new Intent(MainActivity.this, core_workout_plan_activity.class);
                         Toast.makeText(getApplicationContext(), keyO +" : "+ valueO, Toast.LENGTH_LONG).show();
                         startActivity(i);
+                        loadingDialog.dismiss();
 
                     }
                 }
@@ -177,4 +172,21 @@ public class MainActivity extends AppCompatActivity {
         return dialog;
     }
 
+    private void loadDialog(){
+        // Loading dialog view
+        loadingDialog = createLoadingDialog();
+        loadingDialog.show();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Hide the loading dialog
+                loadingDialog.dismiss();
+
+                // Perform any other task after the loading is complete
+                // For example, display a Toast message -> Loading Complete
+//                Toast.makeText(MainActivity.this, "Database is connected", Toast.LENGTH_SHORT).show();
+            }
+        }, 10000); // Simulating a 2-second delay
+    }
 }
